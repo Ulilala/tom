@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>TOM</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
+    <link href="css/tom.css" rel="stylesheet">
+
+    <!-- Czcionki z google -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+  </head>
+
+  <body id="page-top" ng-app="app" ng-controller="portfolio">
+
+    <!-- nawigacja -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand" href="#page-top">Tom</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav text-uppercase ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#services">Usługi</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#about">O firmie</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#contact">Kontakt</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="masthead">
+      <div class="container">
+        <div class="intro-text">
+          <div class="intro-heading text-uppercase">Zapraszam</div>
+          <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Wchodzę...</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Oferta -->
+    <section id="services">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">Zapraszam...</h2>
+            <h3 class="section-subheading text-muted">...do gładkich jak jedwab i równych jak stół ścian i sufitów.<br> Zapraszam do wnętrz czystych niczym norweski potok lub kolorowych niczym tęcza. Jak tylko chcesz. </h3>
+          </div>
+        </div>
+        <div class="row mb-5">
+          <div class="col-sm-6 py-2 d-flex justify-content-center">
+            <img src="img/white-wall.jpg" alt="">
+          </div>
+          <div class="col-sm-6 py-2 d-flex justify-content-center">
+            <img src="img/color-wall.jpg" alt="">
+          </div>
+        </div>
+        <div class="row text-center" style="margin-top: 50px;">
+          <div class="col-md-4">
+            <span class="fa-stack fa-4x">
+              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+              <i class="fas fa-eye fa-stack-1x fa-inverse"></i>
+            </span>
+            <h4 class="service-heading">Dokładność</h4>
+            <p class="text-muted">Mamy na wszystko oko! Nic nie ucieknie naszej uwadze. Wszystko jak od linijki!</p>
+          </div>
+          <div class="col-md-4">
+            <span class="fa-stack fa-4x">
+              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+              <i class="fas fa-coffee fa-stack-1x fa-inverse"></i>
+            </span>
+            <h4 class="service-heading">Bezpieczeństwo</h4>
+            <p class="text-muted">Możesz spokojnie iść na kawę i zostawić nas w domu. Jesteśmy odpowiedzialni i uczciwi.</p>
+          </div>
+          <div class="col-md-4">
+            <span class="fa-stack fa-4x">
+              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+              <i class="fas fa-handshake fa-stack-1x fa-inverse"></i>
+            </span>
+            <h4 class="service-heading">Terminowość</h4>
+            <p class="text-muted">Zgoda to zgoda. Na taki termin na jaki się umówiliśmy, w takim zostanie zadanie wykonane.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section class="bg-light" id="portfolio">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">Portfolio</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 col-sm-6 portfolio-item" ng-repeat="item in portfolio">
+            <a class="portfolio-link" data-toggle="modal" href="#portfolio{{$index}}">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <i class="fa fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="{{portfolio[$index].Icon}}" alt="">
+            </a>
+            <div class="portfolio-caption">
+              <h4>{{portfolio[$index].Tytul}}</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Modal-->
+    <div class="portfolio-modal modal fade" id="portfolio{{$index}}" tabindex="-1" role="dialog" aria-hidden="true" ng-repeat="item in portfolio">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+              <div class="rl"></div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 mx-auto">
+                <div class="modal-body">
+                  <!-- Project Details Go Here -->
+                  <h2 class="text-uppercase">{{portfolio[$index].Tytul}}</h2>
+                  <img class="img-fluid d-block mx-auto" src="{{portfolio[$index].Photo}}" alt="">
+                  <p>{{portfolio[$index].Opis}}</p>
+                  <ul class="list-inline">
+                    <li>Data:.....</li>
+                  </ul>
+                  <button class="btn btn-primary" data-dismiss="modal" type="button">
+                    <i class="fa fa-times"></i>
+                    Zamknij</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- About -->
+    <section id="about" style="padding-top: 50px;">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">O kierowniku</h2>
+          </div>
+        </div>
+        <div class="row py-5">
+          <div class="col-md-6 py-2 d-flex justify-content-center">
+            <img src="img/tomek_praca.jpg" alt="" width="100%">
+          </div>
+          <div class="col-md-6 py-2">
+            <h2>Solidna ze mnie firma</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus odio similique, officiis a, nulla vero magni ipsa enim deleniti tempora sequi velit quos temporibus soluta sit perspiciatis nihil eos quae sunt unde mollitia neque culpa ullam. Suscipit amet libero quis! Laborum tempora voluptate neque aliquid sit non qui. Voluptatum hic sunt fuga excepturi nisi asperiores minima dolores vel, reiciendis pariatur.</p>
+        </div>
+        
+      </div>
+    </section>
+
+
+
+    <!-- Kontakt -->
+    <section id="contact">
+      <div class="container">
+        <div class="row" id="phone">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">Kontakt</h2>
+            <p>tel. 658 256 845 tom.maluje@gmail.com</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <form id="contactForm" name="sentMessage" novalidate="novalidate">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input class="form-control" id="name" type="text" placeholder="Imię">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <div class="form-group">
+                    <input class="form-control" id="email" type="email" placeholder="E-mail">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <div class="form-group">
+                    <input class="form-control" id="phone" type="tel" placeholder="Numer telefonu">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <textarea class="form-control" id="message" placeholder="Wiadomość/pytanie"></textarea>
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="col-lg-12 text-center">
+                  <div id="success"></div>
+                  <button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Wyślij</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            
+          </div>
+          <div class="col-md-4">
+            <ul class="list-inline social-buttons">
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fab fa-facebook"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+
+    <!-- Bootstrap core JavaScript -->
+  <script src="./js/angular.js"></script> 
+  <script type="text/javascript" src="./js/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+  <script type="text/javascript" src="./js/popper.min.js"></script>
+  <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="./js/fontawesome-all.min.js"></script>
+  <script src=".js/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="./js/tom.js"></script>
+  </body>
+</html>
